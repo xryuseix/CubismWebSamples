@@ -12,7 +12,7 @@ export default defineConfig((env: ConfigEnv): UserConfig => {
     resolve: {
       extensions: ['.ts', '.js'],
       alias: {
-        '@framework': path.resolve(__dirname, '../Framework/src'),
+        '@framework': path.resolve(__dirname, './Framework/src'),
       }
     },
     build: {

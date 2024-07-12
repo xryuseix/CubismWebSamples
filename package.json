@@ -1,10 +1,9 @@
 {
   "private": true,
   "scripts": {
-    "start": "node copy_resources.js && vite --host",
-    "build": "node copy_resources.js && vite build --mode development",
-    "build:prod": "node copy_resources.js && vite build",
-    "copy_resources": "node copy_resources.js",
+    "start": "vite --host",
+    "build": "vite build --mode development",
+    "build:prod": "&& vite build",
     "test": "tsc --noEmit",
     "lint": "eslint src --ext .ts",
     "lint:fix": "eslint src --ext .ts --fix",
