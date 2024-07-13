@@ -55,10 +55,7 @@ export class LAppDelegate {
     document.body.appendChild(canvas);
     canvas.setAttribute("id", "live2d-canvas");
 
-    this._resizeCanvas(
-      LAppDefine.CanvasSize.width,
-      LAppDefine.CanvasSize.height,
-    );
+    this._resizeCanvas();
 
     if (!frameBuffer) {
       frameBuffer = gl.getParameter(gl.FRAMEBUFFER_BINDING);
@@ -269,12 +266,9 @@ export class LAppDelegate {
   /**
    * Resize the canvas to fill the screen.
    */
-  private _resizeCanvas(
-    width: number | undefined,
-    height: number | undefined,
-  ): void {
-    canvas.width = width ?? canvas.clientWidth * window.devicePixelRatio;
-    canvas.height = height ?? canvas.clientHeight * window.devicePixelRatio;
+  private _resizeCanvas(): void {
+    canvas.width = window.innerWidth
+    canvas.height = window.innerHeight
     gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
   }
 

@@ -11,12 +11,6 @@ import { LogLevel } from '@framework/live2dcubismframework';
  * Sample Appで使用する定数
  */
 
-// Canvas width and height pixel values, or dynamic screen size ('auto').
-export const CanvasSize: { width?: number; height?: number } | undefined = {
-  width: 400,
-  height: undefined
-};
-
 // 画面
 export const ViewScale = 1.0;
 export const ViewMaxScale = 2.0;
@@ -49,13 +43,7 @@ export const PowerImageName = 'CloseNormal.png';
 // ディレクトリ名とmodel3.jsonの名前を一致させておくこと
 export const ModelDir: string[] = [
   'ryusei-chan',
-  // 'Haru',
   'Hiyori',
-  // 'Mark',
-  // 'Natori',
-  // 'Rice',
-  // 'Mao',
-  // 'Wanko'
 ];
 export const ModelDirSize: number = ModelDir.length;
 

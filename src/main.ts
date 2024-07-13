@@ -5,15 +5,14 @@
  * that can be found at https://www.live2d.com/eula/live2d-open-software-license-agreement_en.html.
  */
 
-import { LAppDelegate } from './lappdelegate';
-import * as LAppDefine from './lappdefine';
-import { LAppGlManager } from './lappglmanager';
+import { LAppDelegate } from "./lappdelegate";
+import { LAppGlManager } from "./lappglmanager";
 
 /**
  * ブラウザロード後の処理
  */
 window.addEventListener(
-  'load',
+  "load",
   (): void => {
     // Initialize WebGL and create the application instance
     if (
@@ -32,7 +31,7 @@ window.addEventListener(
  * 終了時の処理
  */
 window.addEventListener(
-  'beforeunload',
+  "beforeunload",
   (): void => LAppDelegate.releaseInstance(),
   { passive: true }
 );
@@ -41,11 +40,9 @@ window.addEventListener(
  * Process when changing screen size.
  */
 window.addEventListener(
-  'resize',
+  "resize",
   () => {
-    if (LAppDefine.CanvasSize === 'auto') {
-      LAppDelegate.getInstance().onResize();
-    }
+    LAppDelegate.getInstance().onResize();
   },
   { passive: true }
 );
