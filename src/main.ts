@@ -46,3 +46,20 @@ window.addEventListener(
   },
   { passive: true }
 );
+
+let port: MessagePort;
+function onMessage(e: MessageEvent) {
+  const data = e.data;
+  try {
+    port.postMessage('Message received by IFrame: "' + JSON.stringify(e.data) + '"');
+  } catch (e) {
+    console.error(e);
+  }
+}
+function initPort(e: MessageEvent) {
+  if (e.ports[0]) {
+    port = e.ports[0];
+    port.onmessage = onMessage;
+  }
+}
+window.addEventListener("message", initPort);
